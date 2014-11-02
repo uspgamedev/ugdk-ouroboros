@@ -14,8 +14,6 @@ endif()
 
 find_package(Ouroboros COMPONENTS Lua Python)
 
-if(TARGET opwig-lua)
-    message("OH YEAH FOUND opwig-lua")
-else()
-    message("SO SAD")
-endif()
+add_subdirectory(ugdk)
+ouroboros_export_metadata(libugdk ${UGDK_HEADERS})
+ouroboros_create_wrappers(libugdk lua)
