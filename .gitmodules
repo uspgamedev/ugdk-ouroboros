@@ -1,0 +1,3 @@
+[submodule "ugdk"]
+	path = ugdk
+	url = git://github.com/uspgamedev/ugdk.git
