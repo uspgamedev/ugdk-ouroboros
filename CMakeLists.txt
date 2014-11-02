@@ -15,5 +15,11 @@ endif()
 find_package(Ouroboros COMPONENTS Lua Python)
 
 add_subdirectory(ugdk)
-ouroboros_export_metadata(libugdk ${UGDK_HEADERS})
+
+set(FIXED_UGDK_HEADERS)
+foreach(it ${UGDK_HEADERS})
+    list(APPEND FIXED_UGDK_HEADERS "ugdk/${it}")
+endforeach()
+
+ouroboros_export_metadata(libugdk ${FIXED_UGDK_HEADERS})
 ouroboros_create_wrappers(libugdk lua)
